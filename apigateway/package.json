@@ -1,0 +1,23 @@
+{
+  "name": "apigateway",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "start": "babel-watch -L index.js"
+  },
+  "devDependencies": {
+    "babel-watch": "^7.7.2"
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.8",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.21.5",
+    "apollo-server": "^3.12.0",
+    "apollo-server-express": "^3.12.0",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  }
+}
