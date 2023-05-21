@@ -1,0 +1,44 @@
+version: "3"
+services:
+  listings-service:
+    build: "./listings-service"
+    depends_on: 
+      - listings-service-db
+    environment:
+      - DB_URI=mysql://root:password@listings-service-db:3306/db?charset=UTF8
+    ports:
+      - 7100:7100
+    volumes:
+      - ./listings-service:/opt/app
+  
+  listings-service-db:
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+    platform: linux/amd64
+    image: mysql:5.7
+    ports:
+      - 0.0.0.0:7200:3306
+  
+  users-service:
+    build: "./users-service"
+    depends_on:
+      - users-service-db
+    environment:
+      - DB_URI=mysql://root:password@users-service-db:3306/db?charset=UTF8
+    ports:
+      - 7101:7101
+    volumes:
+      - ./users-service:/opt/app
+    
+  users-service-db:
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - MYSQL_DATABASE=db
+    platform: linux/amd64
+    image: mysql:5.7
+    ports:
+      - 0.0.0.0:7201:3306
+
+
+# Mysql currently not working in M1, so we add platform x86_64
