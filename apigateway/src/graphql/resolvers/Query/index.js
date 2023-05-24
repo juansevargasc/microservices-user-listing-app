@@ -1,1 +1,1 @@
-export { default as Listing } from "./listing"; 
+export { default as listings } from "./listings"; 

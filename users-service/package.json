@@ -1,9 +1,11 @@
 {
-  "name": "apigateway",
+  "name": "users-service",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "db:migrate": "sequelize db:migrate",
+    "db:migrate:undo": "sequelize db:migrate:undo",
     "watch": "babel-watch -L src/index.js"
   },
   "devDependencies": {
@@ -13,12 +15,12 @@
     "@babel/core": "^7.21.8",
     "@babel/polyfill": "^7.12.1",
     "@babel/preset-env": "^7.21.5",
-    "apollo-server": "^3.12.0",
-    "apollo-server-express": "^3.12.0",
     "babel-plugin-module-resolver": "^5.0.0",
-    "cookie-parser": "^1.4.6",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "graphql": "^16.6.0"
+    "mysql2": "^3.3.1",
+    "sequelize": "^6.31.1",
+    "sequelize-cli": "^6.6.0"
   }
 }

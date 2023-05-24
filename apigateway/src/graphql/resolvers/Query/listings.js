@@ -3,7 +3,7 @@ const listingsResolver = async () => {
         {
             id: 1,
             title: "Test Listing",
-            description: "Test description Batman v. Superman",
+            description: "Test description Batman v. Superman"
         }
     ];
 };
